@@ -1,17 +1,22 @@
-# NL Coworking — site de apresentação
+# New Space Coworking — Site & Material de Apresentação Comercial
 
-Site estático (HTML + CSS + JS), sem build. Para ver: abra `index.html` no navegador
-ou rode `python -m http.server 5173` nesta pasta e acesse http://localhost:5173.
+Site institucional e catálogo comercial com imagens e preços fictícios para apresentação a clientes.
 
-## Onde editar
-- `assets/js/site-data.js` — preços, planos, salas, WhatsApp, e-mail, Instagram e endereço completo com links do Maps e Waze.
-  É a fonte única de conteúdo: os planos da página são renderizados a partir dele.
-- `assets/img/` — fotos (vieram do site atual; troque por fotos novas em alta resolução quando houver).
-- `index.html` — textos das demais seções e mapa interativo oficial com pin do endereço.
+## Estrutura do Projeto
+- `presentation_cards/` e `assets/cards/`: Imagens em alta resolução geradas com fotos reais do Google Maps de New Space Coworking, logotipo oficial transparente e preços fictícios.
+  - `card_1_estacao_compartilhada.jpg` (1080×1080) — Hot Desk / Diária (R$ 39/dia ou R$ 12/h)
+  - `card_2_mesa_fixa_mensal.jpg` (1080×1080) — Mesa Fixa Dedicada Mensal (R$ 590/mês)
+  - `card_3_sala_de_reuniao.jpg` (1080×1080) — Sala de Reunião Executiva 8 pessoas (R$ 45/hora)
+  - `card_4_endereco_fiscal.jpg` (1080×1080) — Endereço Fiscal & Escritório Virtual (R$ 120/mês)
+  - `card_5_espaco_copa_cafe.jpg` (1080×1080) — Copa & Café Cortesia
+  - `card_6_apresentacao_completa_1920x1080.jpg` (1920×1080) — Slide executivo completo com todos os planos
+- `assets/js/site-data.js`: Dados comerciais, planos e preços renderizados no site.
+- `assets/img/`: Logotipo oficial e fotos reais do espaço baixadas do Google Maps.
+- `index.html`: Página principal com navegação, galeria do espaço, planos interativos, cards de apresentação para download e mapa com a localização oficial em Arujá.
 
-## Gancho para o futuro painel administrativo
-- Defina `window.NL_SITE_ENDPOINT = 'https://.../api/site'` antes do `main.js` e o site passa a ler
-  o mesmo formato de `site-data.js` (JSON) dessa API. Se falhar, usa os dados locais.
-- Defina `window.NL_ADMIN_URL` e o link "Área do membro" do rodapé passa a abrir o painel
-  (hoje mostra "Área do membro em breve").
-- Nenhum painel foi implementado.
+## Como visualizar localmente
+Execute no terminal:
+```bash
+python -m http.server 5173
+```
+E acesse no navegador: `http://localhost:5173`.

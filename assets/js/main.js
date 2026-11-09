@@ -1,4 +1,4 @@
-/* NL Coworking — interações do site */
+/* New Space Coworking - interações do site */
 (function () {
   'use strict';
 
@@ -26,7 +26,7 @@
   var DATA = window.NL_SITE;
 
   function waLink(text) {
-    var number = (DATA && DATA.contact && DATA.contact.whatsapp) || '5511911305969';
+    var number = (DATA && DATA.contact && DATA.contact.whatsapp) || '5511974271649';
     return 'https://wa.me/' + number + '?text=' + encodeURIComponent(text);
   }
   function brl(n) { return n.toLocaleString('pt-BR'); }
@@ -162,7 +162,7 @@
 
   function renderFlexible() {
     $('#plansFlex').innerHTML = DATA.coworking.flexible.map(function (p) {
-      var msg = 'Olá! Tenho interesse no plano "' + p.name + '" (R$ ' + brl(p.price) + '/' + p.unit + ') do NL Coworking.';
+      var msg = 'Olá! Tenho interesse no plano "' + p.name + '" (R$ ' + brl(p.price) + '/' + p.unit + ') do New Space Coworking.';
       return '<article class="flex-plan" data-reveal="rise">' +
         '<div class="flex-plan__top"><h3>' + esc(p.name) + '</h3>' +
         '<p class="price"><span class="cur">R$</span><span class="amt">' + brl(p.price) + '</span><span class="per">/' + esc(p.unit) + '</span></p></div>' +
@@ -176,7 +176,7 @@
   function planMessage(p) {
     var label = billingMode === 'semestral' ? 'plano semestral' : 'sem fidelidade (cancele quando quiser)';
     var price = billingMode === 'semestral' ? p.semestral : p.flexible;
-    return 'Olá! Tenho interesse no plano "' + p.name + '", ' + label + ' (R$ ' + brl(price) + '/mês), do NL Coworking.';
+    return 'Olá! Tenho interesse no plano "' + p.name + '", ' + label + ' (R$ ' + brl(price) + '/mês), do New Space Coworking.';
   }
 
   function renderMonthly() {
@@ -222,8 +222,8 @@
     $('#roomsList').innerHTML = DATA.rooms.map(function (r) {
       var title = r.name + (r.detail ? ' — ' + r.detail : '');
       var msg = r.price
-        ? 'Olá! Gostaria de reservar: ' + title + ' (R$ ' + brl(r.price) + '/' + r.unit + ') no NL Coworking.'
-        : 'Olá! Gostaria de receber uma proposta: ' + title + ' no NL Coworking.';
+        ? 'Olá! Gostaria de reservar: ' + title + ' (R$ ' + brl(r.price) + '/' + r.unit + ') no New Space Coworking.'
+        : 'Olá! Gostaria de receber uma proposta: ' + title + ' no New Space Coworking.';
       return '<li class="room" data-reveal="rise">' +
         '<div class="room__title"><h3>' + esc(r.name) + '</h3><p>' + esc(r.detail || '') + '</p></div>' +
         '<div><ul class="room__items">' + r.items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>' +
